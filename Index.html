@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Question</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff0f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .box {
+      text-align: center;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+    h1 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+    button {
+      font-size: 18px;
+      padding: 10px 20px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      margin: 10px;
+    }
+    #yes {
+      background: #ff4d88;
+      color: white;
+      font-size: 20px;
+    }
+    #no {
+      background: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Can I steal your heart?</h1>
+    <button id="yes">Yes</button>
+    <button id="no">No</button>
+  </div>
+
+  <script>
+    const yes = document.getElementById("yes");
+    const no = document.getElementById("no");
+
+    yes.onclick = () => {
+      document.body.innerHTML = `
+        <div style="display:flex;justify-content:center;align-items:center;height:100vh;text-align:center;">
+          <div>
+            <h1 style="font-size:40px;">YAY💞</h1>
+            <p style="font-size:20px;">I love u sm</p>
+          </div>
+        </div>`;
+    };
+
+    no.onclick = () => {
+      no.textContent = "please, im crying 😭";
+      let size = window.getComputedStyle(yes).fontSize;
+      yes.style.fontSize = (parseFloat(size) + 6) + "px";
+    };
+  </script>
+</body>
+</html>
